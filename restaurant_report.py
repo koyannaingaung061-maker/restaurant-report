@@ -8,9 +8,10 @@ def restarurant_report(records):
     return total_sales,total_expense,profit
 records=[{"day":"Monday","sales":350000,"expense":210000},{"day":"Tuesday","sales":280000,"expense":170000},{"day":"Wednesday","sales":420000,"expense":250000},{"day":"Thursday","sales":310000,"expense":190000}]
 sales,expense,profit=restarurant_report(records)
-print(sales)
-print(expense)
-print(profit)
+print("Total Sales:",sales)
+print("Total Expense:",expense)
+print("Profit:",profit)
+သ
 
     
     
