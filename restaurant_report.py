@@ -1,17 +1,34 @@
-def restarurant_report(records):
+def calculate_orders(records):
+    total_orders=0
+    for record in records:
+        total_orders=total_orders+record["orders"]
+    return total_orders
+def calculate_sales(records):
     total_sales=0
-    total_expense=0
     for record in records:
         total_sales=total_sales+record["sales"]
+    return total_sales
+def calculate_expense(records):
+    total_expense=0
+    for record in records:
         total_expense=total_expense+record["expense"]
-    profit=total_sales-total_expense
-    return total_sales,total_expense,profit
-records=[{"day":"Monday","sales":350000,"expense":210000},{"day":"Tuesday","sales":280000,"expense":170000},{"day":"Wednesday","sales":420000,"expense":250000},{"day":"Thursday","sales":310000,"expense":190000}]
-sales,expense,profit=restarurant_report(records)
+    return total_expense
+def calculate_profit(sales,expense):
+    profit=sales-expense
+    return profit
+def calculate_average(sales,orders):
+    average=sales/orders
+    return average
+records=[{"day":"Tursday","orders":32,"sales":640000,"expense":370000},{"day":"Friday","orders":45,"sales":900000,"expense":510000},{"day":"Saturday","orders":58,"sales":1160000,"expense":650000},{"day":"Sunday","orders":50,"sales":1000000,"expense":580000}]
+orders=calculate_orders(records)
+sales=calculate_sales(records)
+expense=calculate_expense(records)
+profit=calculate_profit(sales,expense)
+average=calculate_average(sales,orders)
+print("Total Orders:",orders)
 print("Total Sales:",sales)
 print("Total Expense:",expense)
 print("Profit:",profit)
-သ
+print("Average Sales per Orders:",average)
 
-    
     
