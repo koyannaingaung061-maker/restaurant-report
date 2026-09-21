@@ -1,8 +1,8 @@
-date=input("Enter date (YYYY-MM-DD):")
+date=input("Enter date (YYYY-MM-DD:)")
 total_sales=0
 total_orders=0
 while True:
-    sale=input("Enter sale:")
+    sale=input("Enter sale").strip().lower()
     if sale=="done":
         break
     sale=int(sale)
@@ -13,4 +13,4 @@ print("===== DAILY SALES REPORT =====")
 print("Date:",date)
 print("Total Sales:",total_sales)
 print("Total Orders:",total_orders)
-print("Average Sale per Order:",average)
+print("Average Sale Per Order:",average)
