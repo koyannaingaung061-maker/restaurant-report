@@ -5,23 +5,31 @@ while True:
     sale=input("Enter sale:").strip().lower()
     if sale=="done":
         break
-    sale=int(sale)
+    try:
+        sale=int(sale)
+    except ValueError:
+        print("Please enter a number or 'done'.")
+        continue
     total_sales=total_sales+sale
     total_orders=total_orders+1
-average=total_sales/total_orders
-print("====== DIALY SALES REPORT ======")
+if total_orders>0:
+    average=total_sales/total_orders
+else:
+    average=0
+print("===== DAILY SALES REPORT =====")
 print("Date:",date)
-print("Total_sales:",total_sales)
-print("Total_orders:",total_orders)
+print("Total Sales:",total_sales)
+print("Total Orders:",total_orders)
 print("Average Sale Per Order:",average)
-file=open("daily_report.txt","a")
+file=open("dialy_report.txt","a")
 file.write("Date:"+date+"\n")
 file.write("Total Sales:"+str(total_sales)+"\n")
 file.write("Total Orders:"+str(total_orders)+"\n")
-file.write("Average Sale Per Orders:"+str(average)+"\n")
+file.write("Average Sale Per Order:"+str(average)+"\n")
 file.close()
 print("Report saved successfully.")
-file=open("daily_report.txt","r")
-print(file.read())
-file.close()
 
+      
+        
+        
+        
