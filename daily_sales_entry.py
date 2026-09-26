@@ -21,15 +21,15 @@ print("Date:",date)
 print("Total Sales:",total_sales)
 print("Total Orders:",total_orders)
 print("Average Sale Per Order:",average)
-file=open("dialy_report.txt","a")
-file.write("Date:"+date+"\n")
-file.write("Total Sales:"+str(total_sales)+"\n")
-file.write("Total Orders:"+str(total_orders)+"\n")
-file.write("Average Sale Per Order:"+str(average)+"\n")
-file.close()
-print("Report saved successfully.")
-
+with open("daily_report.txt","a") as file:
+    file.write("Date:"+date+"\n")
+    file.write("Total Sales:"+str(total_sales)+"\n")
+    file.write("Total Orders:"+str(total_orders)+"\n")
+    file.write("Average Sale Per Order:"+str(average)+"\n")
+print("Report Save Successfully")
       
         
         
         
+    
+
